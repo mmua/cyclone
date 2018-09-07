@@ -28,7 +28,7 @@ def version_cmp(version1, version2):
     Return True if version1 is less greater than version2
     """
     def normalize(v):
-        return [int(x) for x in re.sub(r'(\.0+)*$','', v).split(".")]
+        return [int(x) for x in re.sub(r'(rc.+)*$','', v).split(".")]
     return normalize(version1) < normalize(version2)
 
 # Avoid installation problems on old RedHat distributions (ex. CentOS 5)
